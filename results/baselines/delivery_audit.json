@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "validation_only": false,
+  "validation_fits": 576,
+  "test_fits": 2880,
+  "APs_recomputed": 3456,
+  "core_bags_matched": 512,
+  "transforms_checked": 1536,
+  "max_constraint_violation": 4.527123165232183e-08,
+  "source_and_input_hashes": "matched",
+  "selection_recomputed": true
+}

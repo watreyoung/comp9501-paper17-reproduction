@@ -1,0 +1,28 @@
+{
+  "protocol_version": "full_adaptation_parallel",
+  "core_results": "results/core",
+  "protocol_file": "docs/full_adaptation_parallel_protocol.md",
+  "adapters": [
+    "SA",
+    "TCA",
+    "GFK",
+    "DIP"
+  ],
+  "dimension": 10,
+  "tca_mu_internal": 0.1,
+  "additional_sources": [
+    "experiments/full_adaptation.py",
+    "experiments/feature_adaptation.py",
+    "experiments/baseline_extension.py",
+    "experiments/multiview_baselines.py",
+    "experiments/geodesic_baselines.py",
+    "experiments/dip_baseline.py",
+    "experiments/full_adaptation_wolfe.py",
+    "experiments/dip_wolfe.py",
+    "experiments/full_adaptation_parallel.py",
+    "experiments/full_adaptation_parallel_run.py",
+    "scripts/replay_adaptation_transforms_parallel.py"
+  ],
+  "scope": "Four verified feature adapters with SVM and all three MIL-PI heads; SGF remains a separate required method",
+  "workers": 8
+}

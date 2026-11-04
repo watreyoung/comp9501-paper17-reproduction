@@ -1,0 +1,67 @@
+{
+  "paper": "Exploiting Privileged Information from Web Data for Action and Event Recognition",
+  "paper_year": 2016,
+  "experiment": "human_action_recognition",
+  "source_dataset": {
+    "name": "YouTube",
+    "availability": "author-crawled; no released URL or precomputed MAT files found in the paper",
+    "queries": "the 51 HMDB51 action names",
+    "relevant_videos_per_action": 200,
+    "irrelevant_videos_per_action": 200,
+    "bags_per_action": 40,
+    "bag_size": 5
+  },
+  "target_dataset": {
+    "name": "HMDB51",
+    "official_page": "https://serre.lab.brown.edu/hmdb51.html",
+    "classes": 51,
+    "paper_reported_clips": 6766,
+    "paper_protocol": "3 testing splits, 30 videos per class per split",
+    "current_official_page_reported_clips": 6849,
+    "version_warning": "the current official page and the paper report different clip counts"
+  },
+  "features": {
+    "text": {
+      "type": "term_frequency",
+      "dimension": 2000,
+      "vocabulary": "top_2000_words",
+      "remove_stopwords": true
+    },
+    "visual": {
+      "type": "improved_dense_trajectories_fisher_vector_pca",
+      "descriptors": {
+        "trajectory": {"dimension": 30, "gmm_components": 256},
+        "HOG": {"dimension": 96, "gmm_components": 256},
+        "HOF": {"dimension": 108, "gmm_components": 256},
+        "MBH": {"dimension": 192, "gmm_components": 256}
+      },
+      "pca_dimension": 10000,
+      "test_uses_text": false
+    }
+  },
+  "kernels": {
+    "visual": "gaussian",
+    "text": "linear"
+  },
+  "metrics": {
+    "primary": "mean_accuracy",
+    "definition": "mean classification accuracy over the three HMDB51 testing splits"
+  },
+  "paper_parameters": {
+    "sMIL-PI": {"C1": 100.0, "gamma": 100.0},
+    "MI-SVM-PI": {"C1": 0.01, "gamma": 10.0},
+    "MIL-CPB-PI": {"C1": 0.01, "gamma": 10.0},
+    "sMIL-PI-DA": {"C2": 10.0, "lambda": 100.0},
+    "MI-SVM-PI-DA": {"C2": 0.00001, "lambda": 100.0},
+    "MIL-CPB-PI-DA": {"C2": 0.00001, "lambda": 100.0}
+  },
+  "matlab_demo_parameters": {
+    "sMIL-PI": {"svm_C": 100.0, "gamma": 100.0, "rho": 0.6},
+    "MI-SVM-PI": {"svm_C": 0.01, "gamma": 10.0, "pos_ratio": 0.8},
+    "MIL-CPB-PI": {"svm_C": 0.01, "svm_C_star": 1.0, "gamma": 10.0, "pos_ratio": 0.6, "max_iter": 100},
+    "sMIL-PI-DA": {"svm_C1": 100.0, "svm_C2": 100000.0, "gamma1": 100.0, "gamma2": 1000000.0, "rho": 0.6, "B": 10000000000.0, "epsilon": 0.0},
+    "MI-SVM-PI-DA": {"svm_C1": 0.01, "svm_C2": 0.00001, "gamma1": 10.0, "gamma2": 100.0, "B": 10000000000.0, "epsilon": 0.0, "pos_ratio": 0.2, "max_iter": 3},
+    "MIL-CPB-PI-DA": {"svm_C1": 0.01, "svm_C2": 0.00001, "gamma1": 10.0, "gamma2": 100.0, "B": 10000000000.0, "epsilon": 0.0, "pos_ratio": 0.2, "max_iter": 100}
+  },
+  "required_mat_files": ["visual_bags.mat", "text_bags.mat", "test_features.mat", "test_labels.mat"]
+}

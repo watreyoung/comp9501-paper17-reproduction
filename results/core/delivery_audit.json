@@ -1,0 +1,15 @@
+{
+  "status": "passed_with_failed_validation_candidates",
+  "validation_only": false,
+  "validation_fits": 1056,
+  "test_fits": 9600,
+  "APs_recomputed": 10636,
+  "validation_failures": 20,
+  "conic_subproblems": 7401,
+  "conic_fallbacks": 58,
+  "source_and_input_hashes": "matched",
+  "selection_recomputed": true,
+  "bag_manifests_checked": 512,
+  "max_constraint_violation": 9.590279073656838e-07,
+  "outer_limit_or_cycle_fits": 0
+}

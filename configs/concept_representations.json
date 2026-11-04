@@ -1,0 +1,17 @@
+{
+  "protocol_version": "concept_representations",
+  "core_results": "results/core",
+  "protocol_file": "docs/concept_representations_protocol.md",
+  "methods": [
+    "Classeme",
+    "MIMLSVM"
+  ],
+  "seed": 0,
+  "classeme_C": 1.0,
+  "mimlsvm_C": 1.0,
+  "mimlsvm_gamma": 0.2,
+  "medoid_fraction": 0.2,
+  "concept_weight": 1.0,
+  "scope": "Formal source-only concept caches; MIMLBoost and downstream event evaluation remain separate required work",
+  "reuse_fit_root": "results/concept_representations"
+}

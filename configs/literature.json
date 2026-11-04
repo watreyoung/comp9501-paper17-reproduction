@@ -1,0 +1,8 @@
+{
+  "protocol_version": "literature",
+  "core_results": "results/core",
+  "methods": ["KMM+SVM", "STM", "RT", "DASVM", "SVM-uniform"],
+  "protocol_file": "docs/literature_protocol.md",
+  "additional_sources": ["experiments/literature_dispatch.py", "experiments/kmm_svm_baseline.py", "experiments/stm_baseline.py", "experiments/rank_transfer_baseline.py", "experiments/dasvm_baseline.py"],
+  "scope": "Partial verified-method batch; does not complete the 19-method inventory"
+}

@@ -1,0 +1,73 @@
+{
+  "protocol_version": "core",
+  "cache": "data/prepared/msrvtt.npz",
+  "domains": [
+    "full",
+    "visual_cluster"
+  ],
+  "n_bags": 5,
+  "bag_size": 5,
+  "sigma": 0.6,
+  "noise_levels": [
+    0.0,
+    0.2,
+    0.4
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "validation_seed": 0,
+  "validation_noise": 0.2,
+  "scales": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "families": [
+    "sMIL",
+    "mi-SVM",
+    "MIL-CPB"
+  ],
+  "base_methods": [
+    "SVM",
+    "pSVM+",
+    "sMIL",
+    "sMIL-PI",
+    "sMIL-PI-DA",
+    "mi-SVM",
+    "mi-SVM-PI",
+    "mi-SVM-PI-DA",
+    "MIL-CPB",
+    "MIL-CPB-PI",
+    "MIL-CPB-PI-DA"
+  ],
+  "dependent_controls": [
+    "sMIL-PI-full",
+    "sMIL-PI-shuffled",
+    "mi-SVM-PI-full",
+    "mi-SVM-PI-shuffled",
+    "MIL-CPB-PI-full",
+    "MIL-CPB-PI-shuffled",
+    "KMM+sMIL-PI",
+    "KMM+mi-SVM-PI",
+    "KMM+MIL-CPB-PI"
+  ],
+  "primary_noise": 0.2,
+  "metric": "classwise AP and macro mAP; sample SD and paired seed differences",
+  "loss": "paper per-unit positive C1, negative 1; no class-count normalization",
+  "bias": "sMIL/mi-SVM free; CPB regularized using Q=K+1 without alpha-y equality",
+  "MI_update": "sign predictions, repair only violating bags; same for noPI/PI/DA",
+  "CPB_oracle": "Algorithm2 bag-coordinate enumeration, ties preserve incumbent; approximate globally",
+  "DA": "explicit alpha<=C2*theta, theta>=0, sum theta=n; mu=(n*C2)^2/lambda",
+  "hyperparameters": "paper C1/gamma starts (sMIL 100/100, instance 0.01/10); DA C2 10 or 1e-5, lambda=100; C1 scale only on validation",
+  "negative_results": "all conditions retained; no test-directed tuning or dropped classes/seeds",
+  "status_semantics": "QP/MKL failure recorded and blocks selection; label cycles and iteration limits reported separately from stability",
+  "coverage": "core all-family controls and full/shuffled PI, KMM; natural cross-dataset/action accuracy and other literature baselines remain separate stages",
+  "CPB_relative_objective_tolerance": 0.001,
+  "workers": 4,
+  "solver_policy": "OSQP QP; CPB Clarabel then SCS only on nonoptimal; original residual <=1e-6"
+}

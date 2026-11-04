@@ -1,0 +1,19 @@
+{
+  "protocol_version": "baselines",
+  "core_results": "results/core",
+  "methods": [
+    "SA+SVM",
+    "SA+sMIL-PI",
+    "TCA+SVM",
+    "TCA+sMIL-PI",
+    "KCCA+SVM",
+    "SVM-2K"
+  ],
+  "dimension": 10,
+  "tca_mu": 0.1,
+  "kcca_regularization": 1.0,
+  "svm2k_coupling": 1.0,
+  "svm2k_epsilon": 0.1,
+  "workers": 2,
+  "protocol_file": "docs/baseline_protocol.md"
+}

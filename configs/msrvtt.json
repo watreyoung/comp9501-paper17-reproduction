@@ -1,0 +1,20 @@
+{
+  "dataset": "MSR-VTT",
+  "cache": "data/prepared/msrvtt.npz",
+  "classes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  "seeds": [0, 1, 2],
+  "noise_levels": [0.0, 0.2, 0.4],
+  "n_bags_per_sign": 10,
+  "bag_size": 5,
+  "sigma": 0.6,
+  "methods": ["SVM", "sMIL", "sMIL-PI", "MI-SVM-PI", "MIL-CPB-PI", "sMIL-PI-DA", "MI-SVM-PI-DA", "MIL-CPB-PI-DA", "sMIL-PI-shuffled"],
+  "qp_backend": "osqp",
+  "solver_max_iter": 100000,
+  "outer_max_iter": 100,
+  "mkl_max_iter": 100,
+  "validation_seed": 0,
+  "validation_noise": 0.2,
+  "regularization_scales": [0.1, 1.0, 10.0],
+  "method_parameters": {},
+  "protocol": "Controlled weak-label video semantic classification on the published Full split. DA uses unlabelled evaluation visuals transductively; this is not a natural cross-dataset domain-adaptation benchmark."
+}

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+.pytest_cache/
+
+# Local tooling and OS files
+.DS_Store
+.vscode/
+.idea/
+
+# Re-generated datasets and experiment outputs
+data/downloads/*
+!data/downloads/SHA256SUMS.txt
+data/prepared/*.npz
+data/tasks/**/*.mat
+results/**/predictions/
+results/**/*.npz
+*.log

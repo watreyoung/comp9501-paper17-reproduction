@@ -1,0 +1,15 @@
+{
+  "protocol_version": "concept_events",
+  "core_results": "results/core",
+  "representations": "results/concept_representations",
+  "protocol_file": "docs/concept_events_protocol.md",
+  "methods": [
+    "Classeme",
+    "MIMLSVM"
+  ],
+  "concept_weight": 1.0,
+  "domains": [
+    "full",
+    "visual_cluster"
+  ]
+}
